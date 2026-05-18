@@ -8,7 +8,7 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- ANIMATION STYLE -->
+  <!-- STYLE -->
   <style>
 
     #molang {
@@ -127,11 +127,11 @@
       >
 
       <h1 class="fw-bold">
-        🎮 Catch Liti Game 🐰
+        🎮 Catch Bunny Game 🐰
       </h1>
 
       <p class="lead text-muted">
-        Klik Molang secepat mungkin untuk mendapatkan score ✨
+        Tangkap kelinci sebanyak mungkin sebelum waktu habis ✨
       </p>
 
     </div>
@@ -152,8 +152,13 @@
             <span id="score">0</span>
           </h2>
 
+          <h4 class="mt-3">
+            ⏰ Time:
+            <span id="timer">15</span>
+          </h4>
+
           <p class="text-muted">
-            Klik gambar Molang yang berpindah-pindah!
+            Klik kelinci yang bergerak secepat mungkin!
           </p>
 
           <!-- GAME AREA -->
@@ -165,11 +170,11 @@
 
             <img
               id="molang"
-              src="https://cdn-icons-png.flaticon.com/512/616/616408.png"
+              src="https://cdn-icons-png.flaticon.com/512/826/826963.png"
               width="90"
               class="position-absolute"
               style="cursor: pointer; top: 50px; left: 50px;"
-              alt="Molang"
+              alt="Bunny"
             >
 
           </div>
@@ -180,6 +185,8 @@
           >
             Start Game 🎮
           </button>
+
+          <h4 id="result" class="mt-4"></h4>
 
         </div>
 
@@ -210,7 +217,7 @@
   <footer class="bg-white text-center py-4 shadow-sm">
 
     <p class="mb-0">
-      🌸 Molang World Game Page 🐰
+      🌸 Liti Bunny Game 🐰
     </p>
 
   </footer>
@@ -219,8 +226,10 @@
   <script>
 
     let score = 0;
+    let timeLeft = 15;
+    let gameRunning = false;
 
-    const molang =
+    const bunny =
       document.getElementById("molang");
 
     const gameArea =
@@ -229,7 +238,13 @@
     const scoreText =
       document.getElementById("score");
 
-    function moveMolang() {
+    const timerText =
+      document.getElementById("timer");
+
+    const resultText =
+      document.getElementById("result");
+
+    function moveBunny() {
 
       const maxX =
         gameArea.clientWidth - 100;
@@ -243,27 +258,71 @@
       const randomY =
         Math.floor(Math.random() * maxY);
 
-      molang.style.left = randomX + "px";
-      molang.style.top = randomY + "px";
+      bunny.style.left = randomX + "px";
+      bunny.style.top = randomY + "px";
     }
 
-    molang.addEventListener("click", function () {
+    bunny.addEventListener("click", function () {
+
+      if (!gameRunning) return;
 
       score++;
 
       scoreText.innerHTML = score;
 
-      moveMolang();
+      moveBunny();
 
     });
 
     function startGame() {
 
       score = 0;
+      timeLeft = 15;
+
+      gameRunning = true;
 
       scoreText.innerHTML = score;
+      timerText.innerHTML = timeLeft;
 
-      moveMolang();
+      resultText.innerHTML = "";
+
+      moveBunny();
+
+      const timer = setInterval(function () {
+
+        timeLeft--;
+
+        timerText.innerHTML = timeLeft;
+
+        moveBunny();
+
+        if (timeLeft <= 0) {
+
+          clearInterval(timer);
+
+          gameRunning = false;
+
+          if (score >= 15) {
+
+            resultText.innerHTML =
+              "🎉 YOU WIN! Kamu hebat menangkap kelinci! 🐰";
+
+            resultText.className =
+              "text-success fw-bold mt-4";
+
+          } else {
+
+            resultText.innerHTML =
+              "❌ YOU LOSE! Coba lagi dan dapatkan score lebih tinggi ✨";
+
+            resultText.className =
+              "text-danger fw-bold mt-4";
+
+          }
+
+        }
+
+      }, 1000);
 
     }
 
