@@ -3,90 +3,239 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile Page</title>
+
+  <title>Molang Profile</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body class="bg-light">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+
     <div class="container">
-      <a class="navbar-brand" href="#">MyWebsite</a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <a class="navbar-brand fw-bold" href="#">
+        🌸 Molang World
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarNav">
+
         <ul class="navbar-nav ms-auto">
+
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="index.html">
+              Home
+            </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" href="profile.html">Profile</a>
+            <a class="nav-link active" href="profile.html">
+              Profile
+            </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="game.html">Game</a>
+            <a class="nav-link" href="game.html">
+              Game
+            </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="contact.html">
+              Contact
+            </a>
           </li>
+
         </ul>
+
       </div>
+
     </div>
+
   </nav>
 
-  <div class="container py-5">
+  <!-- HEADER -->
+  <section class="bg-info-subtle text-center py-5">
+
+    <div class="container">
+
+      <img
+        src="https://i.pinimg.com/736x/f1/2e/9c/f12e9c22fcb8f4d33c5ef7b2d7c1a2f5.jpg"
+        class="img-fluid rounded-circle shadow mb-4"
+        width="220"
+        alt="Molang"
+      >
+
+      <h1 class="fw-bold">
+        🐰 Molang Profile 🌸
+      </h1>
+
+      <p class="lead text-muted">
+        Cute profile page with Bootstrap and JavaScript ✨
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- PROFILE CARD -->
+  <section class="container py-5">
+
     <div class="row justify-content-center">
 
-      <div class="col-md-6">
-        <div class="card shadow text-center" id="profileCard">
+      <div class="col-md-7">
+
+        <div
+          class="card border-0 shadow-lg text-center p-4 bg-white"
+          id="profileCard"
+        >
 
           <div class="card-body">
+
             <img
-              src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-              class="rounded-circle mb-3"
-              width="150"
+              src="https://cdn-icons-png.flaticon.com/512/6997/6997662.png"
+              class="rounded-circle shadow mb-4"
+              width="140"
+              alt="Profile"
             >
 
-            <h2>Your Name</h2>
+            <h2 class="fw-bold">
+              🌸 Molang Lover 🌸
+            </h2>
 
-            <p class="text-muted">
-              Student & Beginner Web Developer
+            <p class="text-muted fs-5">
+              Student • Beginner Web Developer • Cute Theme Enthusiast
             </p>
 
-            <button class="btn btn-primary mt-3" onclick="changeProfile()">
-              Change Profile Color
+            <div class="row mt-4 g-3">
+
+              <div class="col-md-4">
+
+                <div class="card border-0 bg-warning-subtle p-3 shadow-sm">
+
+                  <h5>
+                    🎀 Hobby
+                  </h5>
+
+                  <p class="mb-0">
+                    Drawing & Design
+                  </p>
+
+                </div>
+
+              </div>
+
+              <div class="col-md-4">
+
+                <div class="card border-0 bg-info-subtle p-3 shadow-sm">
+
+                  <h5>
+                    🐰 Favorite
+                  </h5>
+
+                  <p class="mb-0">
+                    Molang & Pastel
+                  </p>
+
+                </div>
+
+              </div>
+
+              <div class="col-md-4">
+
+                <div class="card border-0 bg-danger-subtle p-3 shadow-sm">
+
+                  <h5>
+                    ✨ Dream
+                  </h5>
+
+                  <p class="mb-0">
+                    Become Web Designer
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- BUTTON -->
+            <button
+              class="btn btn-warning btn-lg mt-5 shadow-sm"
+              onclick="changeProfile()"
+            >
+              Change Theme 🌸
             </button>
+
           </div>
 
         </div>
+
       </div>
 
     </div>
-  </div>
 
+  </section>
+
+  <!-- QUOTE -->
+  <section class="container pb-5">
+
+    <div class="card border-0 shadow text-center p-4 bg-white">
+
+      <h3 class="fw-bold mb-3">
+        💖 Cute Quote 💖
+      </h3>
+
+      <p class="text-muted fs-5">
+        “Be soft, kind, and colorful like Molang ✨”
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-white text-center py-4 shadow-sm">
+
+    <p class="mb-0">
+      🌸 Molang World Profile Page 🐰
+    </p>
+
+  </footer>
+
+  <!-- JAVASCRIPT -->
   <script>
+
     function changeProfile() {
 
       const card = document.getElementById("profileCard");
 
       const colors = [
-        "bg-primary text-white",
-        "bg-success text-white",
-        "bg-danger text-white",
-        "bg-warning",
-        "bg-info text-white"
+        "bg-warning-subtle",
+        "bg-info-subtle",
+        "bg-danger-subtle",
+        "bg-primary-subtle",
+        "bg-success-subtle"
       ];
 
       const randomColor =
         colors[Math.floor(Math.random() * colors.length)];
 
-      card.className = "card shadow text-center " + randomColor;
+      card.className =
+        "card border-0 shadow-lg text-center p-4 " + randomColor;
     }
+
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
