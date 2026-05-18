@@ -3,68 +3,183 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mini Game</title>
+
+  <title>Molang Catch Game</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- ANIMATION STYLE -->
+  <style>
+
+    #molang {
+      transition: all 0.3s ease;
+      animation: float 2s infinite ease-in-out;
+    }
+
+    #molang:hover {
+      transform: scale(1.1) rotate(8deg);
+    }
+
+    @keyframes float {
+
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+
+    }
+
+    .game-card {
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+    }
+
+  </style>
+
 </head>
+
 <body class="bg-light">
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#">MyWebsite</a>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <div class="container">
+
+      <a class="navbar-brand fw-bold" href="#">
+        🌸 Molang World
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarNav">
+
         <ul class="navbar-nav ms-auto">
 
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="index.html">
+              Home
+            </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="profile.html">Profile</a>
+            <a class="nav-link" href="profile.html">
+              Profile
+            </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" href="game.html">Game</a>
+            <a class="nav-link active" href="game.html">
+              Game
+            </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="contact.html">
+              Contact
+            </a>
           </li>
 
         </ul>
+
       </div>
+
     </div>
+
   </nav>
 
-  <div class="container py-5">
+  <!-- HEADER -->
+  <section class="bg-warning-subtle text-center py-5">
+
+    <div class="container">
+
+      <img
+        src="https://i.pinimg.com/736x/90/8f/2f/908f2f2f2f4d5d76a8f3d5c4b9a6e7d2.jpg"
+        class="img-fluid rounded-circle shadow mb-4"
+        width="220"
+        alt="Molang"
+      >
+
+      <h1 class="fw-bold">
+        🎮 Catch Molang Game 🐰
+      </h1>
+
+      <p class="lead text-muted">
+        Klik Molang secepat mungkin untuk mendapatkan score ✨
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- GAME SECTION -->
+  <section class="container py-5">
 
     <div class="row justify-content-center">
 
-      <div class="col-md-4">
+      <div class="col-md-8">
 
-        <div class="card shadow p-4 text-center">
+        <div class="card border-0 shadow-lg p-4 bg-white text-center game-card">
 
-          <h1 class="mb-4">Guess The Number</h1>
+          <h2 class="fw-bold mb-3">
+            🌸 Score:
+            <span id="score">0</span>
+          </h2>
 
-          <p>Tebak angka dari 1 sampai 10</p>
+          <p class="text-muted">
+            Klik gambar Molang yang berpindah-pindah!
+          </p>
 
-          <input
-            type="number"
-            id="guess"
-            class="form-control mb-3"
-            placeholder="Masukkan angka"
+          <!-- GAME AREA -->
+          <div
+            id="gameArea"
+            class="position-relative mx-auto border rounded-4 bg-info-subtle overflow-hidden"
+            style="width: 100%; max-width: 700px; height: 450px;"
           >
 
-          <button class="btn btn-success" onclick="checkGuess()">
-            Check
-          </button>
+            <img
+              id="molang"
+              src="https://cdn-icons-png.flaticon.com/512/616/616408.png"
+              width="90"
+              class="position-absolute"
+              style="cursor: pointer; top: 50px; left: 50px;"
+              alt="Molang"
+            >
 
-          <h4 id="result" class="mt-4"></h4>
+          </div>
+
+          <button
+            class="btn btn-warning btn-lg mt-4 shadow-sm"
+            onclick="startGame()"
+          >
+            Start Game 🎮
+          </button>
 
         </div>
 
@@ -72,31 +187,86 @@
 
     </div>
 
-  </div>
+  </section>
 
+  <!-- QUOTE -->
+  <section class="container pb-5">
+
+    <div class="card border-0 shadow text-center p-4 bg-white">
+
+      <h3 class="fw-bold mb-3">
+        💖 Molang Game Time 💖
+      </h3>
+
+      <p class="text-muted fs-5">
+        “Play cute games and collect happy moments ✨”
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-white text-center py-4 shadow-sm">
+
+    <p class="mb-0">
+      🌸 Molang World Game Page 🐰
+    </p>
+
+  </footer>
+
+  <!-- JAVASCRIPT -->
   <script>
-    const secretNumber = Math.floor(Math.random() * 10) + 1;
 
-    function checkGuess() {
+    let score = 0;
 
-      const userGuess =
-        parseInt(document.getElementById("guess").value);
+    const molang =
+      document.getElementById("molang");
 
-      const result =
-        document.getElementById("result");
+    const gameArea =
+      document.getElementById("gameArea");
 
-      if (userGuess === secretNumber) {
+    const scoreText =
+      document.getElementById("score");
 
-        result.innerHTML = "🎉 Correct! You Win!";
-        result.className = "text-success mt-4";
+    function moveMolang() {
 
-      } else {
+      const maxX =
+        gameArea.clientWidth - 100;
 
-        result.innerHTML = "❌ Wrong! Try Again";
-        result.className = "text-danger mt-4";
+      const maxY =
+        gameArea.clientHeight - 100;
 
-      }
+      const randomX =
+        Math.floor(Math.random() * maxX);
+
+      const randomY =
+        Math.floor(Math.random() * maxY);
+
+      molang.style.left = randomX + "px";
+      molang.style.top = randomY + "px";
     }
+
+    molang.addEventListener("click", function () {
+
+      score++;
+
+      scoreText.innerHTML = score;
+
+      moveMolang();
+
+    });
+
+    function startGame() {
+
+      score = 0;
+
+      scoreText.innerHTML = score;
+
+      moveMolang();
+
+    }
+
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
