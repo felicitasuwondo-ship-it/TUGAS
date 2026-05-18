@@ -1,117 +1,105 @@
-<!-- ===================== index.html (Landing Page) ===================== -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landing Page</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Creative Landing Page</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="#">WebLitooyy</a>
-    <div>
-      <a href="index.html" class="btn btn-outline-light btn-sm">Home</a>
-      <a href="profile.html" class="btn btn-outline-light btn-sm">Profile</a>
-      <a href="contact.html" class="btn btn-outline-light btn-sm">Contact</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">MyWebsite</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="profile.html">Profile</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="game.html">Game</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<div class="container text-center mt-5">
-  <h1>Welcome to My Website</h1>
-  <p class="lead">Keren ini</p>
-  <button class="btn btn-primary" onclick="showAlert()">Klik Aku</button>
-</div>
+  <section class="bg-primary text-white text-center py-5">
+    <div class="container py-5">
+      <h1 class="display-4 fw-bold">Welcome to My Creative Website</h1>
 
-<script>
-function showAlert() {
-  alert("Halo! Selamat datang 😎");
-}
-</script>
+      <p class="lead">
+        Website sederhana menggunakan HTML, Bootstrap, dan JavaScript.
+      </p>
 
-</body>
-</html>
-
-
-<!-- ===================== profile.html ===================== -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-
-<nav class="navbar navbar-dark bg-dark">
-  <div class="container">
-    <a href="index.html" class="btn btn-light btn-sm">Back</a>
-  </div>
-</nav>
-
-<div class="container mt-5 text-center">
-  <h2>Profile Saya</h2>
-  <p>Nama: Felicita Suwondo</p>
-  <p>Kelas: XI-D</p>
-
-  <button class="btn btn-success" onclick="playGame()">Main Game</button>
-
-  <p id="gameResult" class="mt-3"></p>
-</div>
-
-<script>
-function playGame() {
-  let angka = Math.floor(Math.random() * 10);
-  document.getElementById("gameResult").innerText = "Angka random: " + angka;
-}
-</script>
-
-</body>
-</html>
-
-
-<!-- ===================== contact.html ===================== -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-
-<nav class="navbar navbar-dark bg-dark">
-  <div class="container">
-    <a href="index.html" class="btn btn-light btn-sm">Back</a>
-  </div>
-</nav>
-
-<div class="container mt-5">
-  <h2>Contact Me</h2>
-  <form onsubmit="return submitForm()">
-    <div class="mb-3">
-      <label class="form-label">Nama</label>
-      <input type="text" class="form-control" id="nama" required>
+      <a href="profile.html" class="btn btn-light btn-lg mt-3">
+        Explore Now
+      </a>
     </div>
-    <div class="mb-3">
-      <label class="form-label">Pesan</label>
-      <textarea class="form-control" id="pesan" required></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Kirim</button>
-  </form>
-</div>
+  </section>
 
-<script>
-function submitForm() {
-  alert("Pesan berhasil dikirim!");
-  return false;
-}
-</script>
+  <section class="container py-5">
+    <div class="row text-center g-4">
+
+      <div class="col-md-4">
+        <div class="card shadow h-100">
+          <div class="card-body">
+            <h3 class="card-title">Modern Design</h3>
+
+            <p class="card-text">
+              Menggunakan Bootstrap agar tampilan lebih modern dan responsive.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card shadow h-100">
+          <div class="card-body">
+            <h3 class="card-title">Interactive</h3>
+
+            <p class="card-text">
+              Terdapat halaman profile dan game dengan JavaScript interaktif.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card shadow h-100">
+          <div class="card-body">
+            <h3 class="card-title">Responsive</h3>
+
+            <p class="card-text">
+              Tampilan menyesuaikan ukuran layar laptop maupun HP.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="bg-dark text-white text-center py-3">
+    <p class="mb-0">© 2026 MyWebsite | Bootstrap Project</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
